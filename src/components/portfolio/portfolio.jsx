@@ -5,10 +5,10 @@ import { Star } from "lucide-react"
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-gray-50 py-20 px-4">
+    <div className="min-h-screen  py-20 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-12 mt-40">
+        <div className="text-center mb-12 mt-14">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Virtual Assistant Services</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto ">
             Expert solutions for Amazon sellers to enhance your business performance and drive growth
@@ -41,67 +41,27 @@ export default function Portfolio() {
         </div>
 
         {/* Central Diagram */}
-        <div className="flex justify-center mb-8">
-          <div className="relative w-[500px] h-[400px]">
-            {/* Central Circle */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-36 h-36 bg-gray-800 rounded-full flex items-center justify-center">
-              <div className="text-white text-center">
-                <div className="text-sm font-bold">LISTING</div>
-                <div className="text-sm font-bold">OPTIMIZATION</div>
-              </div>
-            </div>
+        <div className="flex justify-center">
+     
+           
+        
+        <div className="rounded-lg">
+          <img
+            src="/assets/portfolio.jpg"
+            alt="Modern workspace with laptop, coffee cup, and notebook"
+            className="w-full h-[600px]  rounded-lg "
+          />
+        </div>
+    
 
-            {/* Service Bubbles - positioned to match screenshot */}
-            {/* Product Listing - top */}
-            <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-24 h-16 bg-cyan-200 rounded-full flex items-center justify-center border-2 border-white">
-              <span className="text-xs text-center font-medium px-1">Product Listing</span>
-            </div>
+            
+           
 
-            {/* Backend Search Terms - top right */}
-            <div className="absolute top-8 right-12 w-20 h-14 bg-purple-300 rounded-full flex items-center justify-center border-2 border-white">
-              <span className="text-xs text-center font-medium px-1">Backend Search Terms</span>
-            </div>
+           
 
-            {/* Keyword Research - right */}
-            <div className="absolute top-1/2 right-2 transform -translate-y-1/2 w-20 h-14 bg-red-300 rounded-full flex items-center justify-center border-2 border-white">
-              <span className="text-xs text-center font-medium px-1">Keyword Research</span>
-            </div>
+          
 
-            {/* Bullet Points - bottom right */}
-            <div className="absolute bottom-8 right-12 w-18 h-14 bg-orange-300 rounded-full flex items-center justify-center border-2 border-white">
-              <span className="text-xs text-center font-medium px-1">Bullet Points</span>
-            </div>
-
-            {/* Product Description - bottom */}
-            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-16 bg-yellow-300 rounded-full flex items-center justify-center border-2 border-white">
-              <span className="text-xs text-center font-medium px-1">Product Description</span>
-            </div>
-
-            {/* A+ Content with EBC - bottom left */}
-            <div className="absolute bottom-8 left-12 w-18 h-14 bg-green-300 rounded-full flex items-center justify-center border-2 border-white">
-              <span className="text-xs text-center font-medium px-1">A+ Content with EBC</span>
-            </div>
-
-            {/* Content Creation - left */}
-            <div className="absolute top-1/2 left-2 transform -translate-y-1/2 w-20 h-14 bg-blue-300 rounded-full flex items-center justify-center border-2 border-white">
-              <span className="text-xs text-center font-medium px-1">Content Creation</span>
-            </div>
-
-            {/* Competitive Analysis - top left */}
-            <div className="absolute top-8 left-12 w-20 h-14 bg-indigo-300 rounded-full flex items-center justify-center border-2 border-white">
-              <span className="text-xs text-center font-medium px-1">Competitive Analysis</span>
-            </div>
-
-            {/* Accurate Product Details - top right inner */}
-            {/* <div className="absolute top-16 right-24 w-16 h-12 bg-pink-300 rounded-full flex items-center justify-center border-2 border-white">
-              <span className="text-xs text-center font-medium px-1">Accurate Product Details</span>
-            </div> */}
-
-            {/* High-Quality Product Images - bottom right inner */}
-            {/* <div className="absolute bottom-16 right-24 w-16 h-12 bg-teal-300 rounded-full flex items-center justify-center border-2 border-white">
-              <span className="text-xs text-center font-medium px-1">High-Quality Product Images</span>
-            </div> */}
-          </div>
+         
         </div>
 
         {/* Bottom Service Cards */}

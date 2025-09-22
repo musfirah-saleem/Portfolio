@@ -1,115 +1,121 @@
-export default function Projects() {
+"use client";
+import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
+
+const projects = [
+  {
+    title: "Keyword Research",
+    description:
+      "Strategic keyword targeting to enhance product visibility and drive organic traffic for Amazon listings.",
+    image: "/assets/project1.jfif",
+  },
+  {
+    title: "Listing Optimization & Audit",
+    description:
+      "Strategic listing creation and in-depth audits for enhanced visibility and improved conversion rates.",
+    image: "/assets/project2.jfif",
+  },
+  {
+    title: "Amazon PPC Management",
+    description:
+      "Comprehensive strategies to maximize ad performance and sales through data-driven campaign management.",
+    image: "/assets/project3.jfif",
+  },
+  {
+    title: "PPC Campaign Optimization",
+    description:
+      "Data-driven techniques to improve campaign efficiency and increase ROI for Amazon ads.",
+    image: "/assets/project4.jfif",
+  },
+];
+
+export default function ProjectsCarousel() {
+  const [current, setCurrent] = useState(0);
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev === 0 ? projects.length - 2 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev >= projects.length - 2 ? 0 : prev + 1));
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="py-16 px-4 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">My Projects</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">Explore my work as an Amazon virtual assistant</p>
+    <section className="relative py-16 bg-gray-50">
+      <div className="mx-20 px-6 text-center">
+        <h1 className="text-4xl sm:text-5xl font-bold mb-12">My Projects</h1>
+        <div className="relative flex items-center justify-center ">
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 z-10 rounded-full bg-white p-3 shadow-md hover:bg-gray-100"
+          >
+            <ChevronLeft className="h-6 w-6 text-gray-800" />
+          </button>
+
+          <div className="w-full max-w-6xl overflow-hidden mb-10">
+            <div
+              className="flex transition-transform duration-700 ease-in-out gap-6"
+              style={{ transform: `translateX(-${current * 50}%)` }}
+            >
+              {projects.map((item, idx) => (
+                <div key={idx} className="flex-[0_0_50%]">
+                  <div className="rounded-2xl bg-white shadow-xl overflow-hidden h-full">
+                    <div className="aspect-video">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="p-6 text-left">
+                      <h3 className="text-2xl font-semibold">{item.title}</h3>
+                      <p className="mt-3 text-gray-600">{item.description}</p>
+                      <Link
+                        href="/portfolio"
+                        className="mt-4 inline-block text-sm font-medium text-blue-500 hover:text-blue-400"
+                      >
+                        View Case Study →
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 z-10 rounded-full bg-white p-3 shadow-md hover:bg-gray-100"
+          >
+            <ChevronRight className="h-6 w-6 text-gray-800" />
+          </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Keyword Research Project */}
-          <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer">
-            <div className="aspect-video bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-              <img
-                src="/assets/project1.jfif"
-                alt="Keyword Research Dashboard"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Keyword Research</h3>
-              <p className="text-gray-600 mb-4">
-                Strategic keyword targeting to enhance product visibility and drive organic traffic for Amazon listings.
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-blue-600 font-medium">View Case Study</span>
-                <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center group-hover:bg-blue-700 transition-colors">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Listing Optimization Project */}
-          <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer">
-            <div className="aspect-video bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-              <img
-                src="/assets/project2.jfif"
-                alt="Listing Optimization"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Listing Optimization & Audit</h3>
-              <p className="text-gray-600 mb-4">
-                Strategic listing creation and in-depth audits for enhanced visibility and improved conversion rates.
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-green-600 font-medium">View Case Study</span>
-                <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center group-hover:bg-green-700 transition-colors">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Amazon PPC Management Project */}
-          <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer">
-            <div className="aspect-video bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
-              <img
-                src="/assets/project3.jfif"
-                alt="PPC Management Dashboard"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Amazon PPC Management</h3>
-              <p className="text-gray-600 mb-4">
-                Comprehensive strategies to maximize ad performance and sales through data-driven campaign management.
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-purple-600 font-medium">View Case Study</span>
-                <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center group-hover:bg-purple-700 transition-colors">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* PPC Campaign Optimization Project */}
-          <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer">
-            <div className="aspect-video bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
-              <img
-                src="/assets/project4.jfif"
-                alt="Campaign Optimization"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">PPC Campaign Optimization</h3>
-              <p className="text-gray-600 mb-4">
-                Data-driven techniques to improve campaign efficiency and increase return on investment for Amazon ads.
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-orange-600 font-medium">View Case Study</span>
-                <div className="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center group-hover:bg-orange-700 transition-colors">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Button
+          size="lg"
+          className="group relative overflow-hidden 
+             bg-[#FFCE12] rounded-full"
+        >
+          <span className="relative text-black z-10 flex items-center">
+            View All Projects
+          </span>
+          <span
+            className="absolute inset-0 
+                   bg-[linear-gradient(45deg,#f1c40f,#f39c12)] 
+                   opacity-0 group-hover:opacity-100 
+                   transition-opacity"
+          />
+        </Button>
       </div>
     </section>
-  )
+  );
 }
