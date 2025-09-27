@@ -35,11 +35,11 @@ export default function ProjectsCarousel() {
   const [current, setCurrent] = useState(0);
 
   const prevSlide = () => {
-    setCurrent((prev) => (prev === 0 ? projects.length - 2 : prev - 1));
+    setCurrent((prev) => (prev === 0 ? projects.length - 3 : prev - 1));
   };
 
   const nextSlide = () => {
-    setCurrent((prev) => (prev >= projects.length - 2 ? 0 : prev + 1));
+    setCurrent((prev) => (prev >= projects.length - 3 ? 0 : prev + 1));
   };
 
   useEffect(() => {
@@ -51,9 +51,11 @@ export default function ProjectsCarousel() {
 
   return (
     <section className="relative py-16 bg-gray-50">
-      <div className="mx-20 px-6 text-center">
+      <div className="mx-10 px-6 text-center">
         <h1 className="text-4xl sm:text-5xl font-bold mb-12">My Projects</h1>
-        <div className="relative flex items-center justify-center ">
+
+        <div className="relative flex items-center justify-center">
+          {/* Prev Button */}
           <button
             onClick={prevSlide}
             className="absolute left-0 z-10 rounded-full bg-white p-3 shadow-md hover:bg-gray-100"
@@ -61,13 +63,14 @@ export default function ProjectsCarousel() {
             <ChevronLeft className="h-6 w-6 text-gray-800" />
           </button>
 
-          <div className="w-full max-w-6xl overflow-hidden mb-10">
+          {/* Carousel Wrapper */}
+          <div className="w-full max-w-7xl overflow-hidden mb-10">
             <div
-              className="flex transition-transform duration-700 ease-in-out gap-6"
-              style={{ transform: `translateX(-${current * 50}%)` }}
+              className="flex transition-transform duration-700 ease-in-out gap-6 pt-10 pb-10"
+              style={{ transform: `translateX(-${current * (100 / 3)}%)` }}
             >
               {projects.map((item, idx) => (
-                <div key={idx} className="flex-[0_0_50%]">
+                <div key={idx} className="flex-[0_0_33.3333%]">
                   <div className="rounded-2xl bg-white shadow-xl overflow-hidden h-full">
                     <div className="aspect-video">
                       <img
@@ -79,12 +82,6 @@ export default function ProjectsCarousel() {
                     <div className="p-6 text-left">
                       <h3 className="text-2xl font-semibold">{item.title}</h3>
                       <p className="mt-3 text-gray-600">{item.description}</p>
-                      <Link
-                        href="/portfolio"
-                        className="mt-4 inline-block text-sm font-medium text-blue-500 hover:text-blue-400"
-                      >
-                        View Case Study →
-                      </Link>
                     </div>
                   </div>
                 </div>
@@ -99,22 +96,20 @@ export default function ProjectsCarousel() {
             <ChevronRight className="h-6 w-6 text-gray-800" />
           </button>
         </div>
-
-        <Button
-          size="lg"
-          className="group relative overflow-hidden 
-             bg-[#FFCE12] rounded-full"
-        >
-          <span className="relative text-black z-10 flex items-center">
-            View All Projects
-          </span>
-          <span
-            className="absolute inset-0 
-                   bg-[linear-gradient(45deg,#f1c40f,#f39c12)] 
-                   opacity-0 group-hover:opacity-100 
-                   transition-opacity"
-          />
-        </Button>
+        <Link href="/portfolio">
+          <Button
+            size="lg"
+            className="group relative overflow-hidden bg-[#FFCE12] rounded-full cursor-pointer"
+          >
+            <span className="relative text-black z-10 flex items-center">
+              View All Projects
+            </span>
+            <span
+              className="absolute inset-0 bg-[linear-gradient(45deg,#f1c40f,#f39c12)]
+            opacity-0 group-hover:opacity-100 transition-opacity"
+            />
+          </Button>
+        </Link>
       </div>
     </section>
   );

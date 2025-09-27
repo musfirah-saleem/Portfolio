@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, Target, Zap } from "lucide-react";
+import Link from "next/link";
 
 export default function About() {
   const achievements = [
@@ -23,17 +24,14 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-10">
             <div className="space-y-4">
-            
-
-               <div
-            className="mb-8 inline-flex items-center rounded-full 
+              <div
+                className="mb-8 inline-flex items-center rounded-full 
                 border border-gray -400/30
                 bg-gray-400/10 
                 px-4 py-2 text-sm font-sm  text-gray-600 shadow-sm"
-          >
-           
-           Amazon Specialist
-          </div>
+              >
+                Amazon Specialist
+              </div>
               <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
                 Meet Ahmad Ali
               </h2>
@@ -78,52 +76,51 @@ export default function About() {
             </div>
 
             <div className="flex flex-wrap gap-4">
-            
-
-
-               <Button
-              size="lg"
-              className="group relative overflow-hidden 
-             bg-[#FFCE12] rounded-full"
-            >
-              <span className="relative text-black z-10 flex items-center">
-               Start Your Optimization
-             
-              </span>
-              <span
-                className="absolute inset-0 
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  className="group relative overflow-hidden 
+             bg-[#FFCE12] rounded-full cursor-pointer"
+                >
+                  <span className="relative text-black z-10 flex items-center">
+                    Start Your Optimization
+                  </span>
+                  <span
+                    className="absolute inset-0 
                    bg-[linear-gradient(45deg,#f1c40f,#f39c12)] 
                    opacity-0 group-hover:opacity-100 
                    transition-opacity"
-              />
-            </Button>
-
-              <Button variant="outline"size="lg" className="rounded-full">
-                View Case Studies
-              </Button>
+                  />
+                </Button>
+              </Link>
+              <Link href="/portfolio">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="rounded-full cursor-pointer"
+                >
+                  View Case Studies
+                </Button>
+              </Link>
             </div>
           </div>
 
           <div className="relative">
             <div className="relative overflow-hidden rounded-2xl shadow-xl">
               <img
-                src="/assets/about.avif"
+                src="/assets/about.jpeg"
                 alt="Ahmad Ali - Amazon Specialist"
-                className="w-full h-auto object-cover"
+                className="w-full h-[720px] object-cover"
               />
             </div>
             <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[85%] bg-white shadow-lg rounded-xl p-6">
               <div className="grid grid-cols-2 gap-6 text-center">
                 <div>
-                  <div className="text-2xl font-bold">
-                    400+
-                  </div>
+                  <div className="text-2xl font-bold">400+</div>
                   <div className="text-sm text-gray-600">Listings Created</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold">
-                    500+
-                  </div>
+                  <div className="text-2xl font-bold">500+</div>
                   <div className="text-sm text-gray-600">PPC Campaigns</div>
                 </div>
               </div>

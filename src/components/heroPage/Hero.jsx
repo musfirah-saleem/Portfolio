@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ShoppingCart } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -33,30 +34,33 @@ export default function Hero() {
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Button
-              size="lg"
-              className="group relative overflow-hidden 
-             bg-[#FFCE12] rounded-full"
-            >
-              <span className="relative text-black z-10 flex items-center">
-                Get Started Today
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </span>
-              <span
-                className="absolute inset-0 
+            <Link href="/contact">
+              <Button
+                size="lg"
+                className="group relative overflow-hidden 
+             bg-[#FFCE12] rounded-full cursor-pointer"
+              >
+                <span className="relative text-black z-10 flex items-center">
+                  Get Started Today
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </span>
+                <span
+                  className="absolute inset-0 
                    bg-[linear-gradient(45deg,#f1c40f,#f39c12)] 
                    opacity-0 group-hover:opacity-100 
                    transition-opacity"
-              />
-            </Button>
-
-            <Button
-              variant="outline"
-              size="lg"
-              className="rounded-full text-gray-700"
-            >
-              View Case Studies
-            </Button>
+                />
+              </Button>
+            </Link>
+            <Link href="/portfolio">
+              <Button
+                variant="outline"
+                size="lg"
+                className="rounded-full text-gray-700 cursor-pointer"
+              >
+                View Case Studies
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
