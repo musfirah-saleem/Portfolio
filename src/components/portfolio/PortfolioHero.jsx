@@ -10,6 +10,7 @@ export default function PortfoliokHero() {
           <p className="text-lg md:text-xl  font-medium">
             <span className="border-b-2 border-black pb-1">8+ Projects finished</span>
           </p>
+          
         </div>
 
         <div className="flex justify-center items-center">
