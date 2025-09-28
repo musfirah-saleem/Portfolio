@@ -91,6 +91,8 @@ function ReviewCard({ review }) {
           </div>
         </div>
 
+
+
         <div className="border-t border-border mb-3"></div>
 
         <div className="mb-3">
@@ -101,8 +103,8 @@ function ReviewCard({ review }) {
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                   ))}
-                  {/* <span className="text-sm text-gray-600 ml-2">7 months ago</span> */}
-                {/* </div>  */}
+                 <span className="text-sm text-gray-600 ml-2">7 months ago</span> 
+                 </div>  */}
 
         <h4 className="font-semibold text-foreground mb-2">{review.title}</h4>
         <p className="text-muted-foreground text-sm leading-relaxed">{review.content}</p>
