@@ -22,12 +22,12 @@ export default function Hero() {
             Amazon Marketplace Experts
           </div>
 
-          <h1 className="text-balance text-4xl font-bold tracking-tight text-gray-600 sm:text-6xl lg:text-7xl leading-20">
+          <h1 className="text-balance text-4xl font-bold tracking-tight text-gray-600 sm:text-6xl lg:text-7xl leading-12 md:leading-20">
             Scale Your Amazon Business{" "}
             <span className="text-black">With Expert Solutions</span>
           </h1>
 
-          <p className="mt-6 text-lg leading-8 text-gray-600 sm:text-xl mx-20">
+          <p className="mt-6 text-lg leading-8 text-gray-600 sm:text-xl md:mx-20 mx-6">
             Comprehensive Amazon account management services designed to
             maximize your sales, optimize your listings, and grow your
             marketplace presence with proven strategies.

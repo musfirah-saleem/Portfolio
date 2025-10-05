@@ -33,7 +33,7 @@ export default function About() {
                 Amazon Specialist
               </div>
               <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
-                Meet Ahmad Ali
+                Meet Muhammad Moin
               </h2>
               <p className="text-lg leading-relaxed text-gray-600">
                 Helping Amazon businesses scale with data-driven optimization,
@@ -108,9 +108,10 @@ export default function About() {
           <div className="relative">
             <div className="relative overflow-hidden rounded-2xl shadow-xl">
               <img
-                src="/assets/about.jpeg"
+                src="/assets/about02.jpg"
                 alt="Ahmad Ali - Amazon Specialist"
-                className="w-full h-[720px] object-cover"
+                className="w-full h-[350px] sm:h-[500px] lg:h-[750px]
+ object-cover"
               />
             </div>
             <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[85%] bg-white shadow-lg rounded-xl p-6">
