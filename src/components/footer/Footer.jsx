@@ -41,7 +41,6 @@ export default function Footer() {
                 <Phone className="w-4 h-4" />
                 +92 336 748 2013
               </a>
-              
               <a
                 href="mailto:business@ahmadamz.com"
                 className="flex items-center gap-3 text-secondary/90 hover:text-gray-400 transition"
